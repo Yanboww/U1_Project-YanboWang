@@ -1,10 +1,15 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Note! Please input percent as a whole number without % symbol");
-        Scanner s = new Scanner(System.in);
+        //border design
         String decoration = "--------------------------------";
-        System.out.print("Bill: ");
+        System.out.println(decoration+decoration);
+        //user instructions
+        System.out.printf("|%s |%n","Note! do not use any symbols when inputting data! (no $ or %)");
+        System.out.println(decoration+decoration);
+        //asks for user input and detects/stores through scanner
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter your Bill($): ");
         String transBill = s.nextLine();
         double bill = Double.parseDouble(transBill);
         System.out.print("Tip Percent: ");
@@ -13,12 +18,15 @@ public class Main {
         System.out.print("Number of People: ");
         String transNumP = s.nextLine();
         int numP = Integer.parseInt(transNumP);
+        //no longer need scanner
         s.close();
+        //setting variables that will be printed using equations
         double totalTip = bill * ((double)tip/100);
         double totalBill = bill + totalTip;
         double tipPer = totalTip / numP;
         double billPer = totalBill / numP;
         System.out.println();
+        //prints the data and outputs in the console
         System.out.println(decoration);
         System.out.printf("|Total Tip Amount: $" +"%.2f",totalTip);
         System.out.println("       |");
@@ -29,8 +37,8 @@ public class Main {
         System.out.printf("|Tip per person: $" + "%.2f", tipPer);
         System.out.println("         |");
         System.out.println(decoration);
-        System.out.printf("|Total per person: $" + "%.2f", billPer );
-        System.out.println("       |");
+        System.out.printf("|Total bill per person: $" + "%.2f", billPer );
+        System.out.println("  |");
         System.out.println(decoration);
     }
 }
