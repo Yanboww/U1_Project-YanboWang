@@ -14,11 +14,12 @@ public class Main {
         String transNumP = s.nextLine();
         int numP = Integer.parseInt(transNumP);
         s.close();
-        double totalTip = bill * (tip/100);
+        double totalTip = bill * ((double)tip/100);
         double totalBill = bill + totalTip;
         double tipPer = totalTip / numP;
         double billPer = totalBill / numP;
         System.out.println();
+        System.out.printf("Total Tip Amount: " + "%.2f",totalTip);
 
 
     }
